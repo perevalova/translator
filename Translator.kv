@@ -1,0 +1,50 @@
+<TranslateWindow>:
+    name: "translator"
+
+    language_from: lg_from
+    language_to: lg_to
+
+    #GridLayout:
+    rows: 3
+    cols: 2
+
+    BoxLayout:
+        Label:
+            text:"From"
+            size_hint: 0.5, 0.3
+            pos_hint: {'x': 0, 'top': 1}
+
+        Label:
+            text:"To"
+            size_hint: 0.5, 0.3
+            pos_hint: {'right': 1, 'top': 1}
+
+    BoxLayout:
+        TextInput:
+            id: lg_from
+            size_hint: 0.5, 0.7
+            #size_hint: 0.5, 0.30
+            multiline: False
+            on_text_validate: root.translate()
+            canvas.before:
+                Color:
+                    rgb: 0.13, 0.17, 0.18, 1
+
+        #Label:
+           # id: lg_to
+           # size_hint: 0.5, 0.7
+           # height: 30
+
+        TextInput:
+            id: lg_to
+            size_hint: 0.5, 0.7
+            read: True
+
+    BoxLayout:
+        Button:
+            id: btn
+            text: "Translate"
+            #size_hint: 0.5, 0.25
+            size_hint: 1, 0.20
+            halign: 'center'
+            valign: 'center'
